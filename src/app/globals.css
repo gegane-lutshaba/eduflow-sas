@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+/* Futuristic AI-Powered Theme Variables */
+:root {
+  /* Neural Network Color Palette */
+  --neural-blue: #00D4FF;
+  --cyber-green: #00FF88;
+  --deep-space: #0A0A0F;
+  --neural-purple: #8B5CF6;
+  --quantum-orange: #FF6B35;
+  --hologram-pink: #FF3D71;
+  --data-silver: #E2E8F0;
+  --glass-white: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(10, 10, 15, 0.8);
+  
+  /* Background Gradients */
+  --bg-primary: linear-gradient(135deg, var(--deep-space) 0%, #1a1a2e 50%, #16213e 100%);
+  --bg-neural: linear-gradient(45deg, var(--neural-blue), var(--neural-purple));
+  --bg-cyber: linear-gradient(45deg, var(--cyber-green), var(--neural-blue));
+  --bg-glass: backdrop-filter: blur(20px);
+  
+  /* Glow Effects */
+  --glow-neural: 0 0 20px rgba(0, 212, 255, 0.3);
+  --glow-cyber: 0 0 20px rgba(0, 255, 136, 0.3);
+  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.3);
+  --glow-intense: 0 0 40px rgba(0, 212, 255, 0.6);
+  
+  /* Animation Variables */
+  --pulse-duration: 2s;
+  --float-duration: 3s;
+  --neural-animation: 4s;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--data-silver);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animated Background Particles */
+.neural-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+  animation: neural-pulse var(--neural-animation) ease-in-out infinite alternate;
+}
+
+@keyframes neural-pulse {
+  0% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* Glassmorphism Effects */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Neural Network Button Styles */
+.neural-button {
+  position: relative;
+  background: linear-gradient(45deg, var(--neural-blue), var(--neural-purple));
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-neural);
+}
+
+.neural-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-intense);
+}
+
+.neural-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.neural-button:hover::before {
+  left: 100%;
+}
+
+/* Cyber Security Button */
+.cyber-button {
+  background: linear-gradient(45deg, var(--cyber-green), var(--neural-blue));
+  border: 1px solid var(--cyber-green);
+  border-radius: 12px;
+  padding: 12px 24px;
+  color: var(--deep-space);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-cyber);
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-cyber), 0 8px 25px rgba(0, 255, 136, 0.3);
+}
+
+/* Holographic Text Effect */
+.holographic-text {
+  background: linear-gradient(45deg, var(--neural-blue), var(--hologram-pink), var(--cyber-green));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: holographic-shift 3s ease-in-out infinite;
+}
+
+@keyframes holographic-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating Animation */
+.float-animation {
+  animation: float var(--float-duration) ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Pulse Animation */
+.pulse-glow {
+  animation: pulse-glow var(--pulse-duration) ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--glow-neural); }
+  50% { box-shadow: var(--glow-intense); }
+}
+
+/* Neural Network Connection Lines */
+.neural-connections {
+  position: relative;
+}
+
+.neural-connections::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neural-blue), transparent);
+  animation: data-flow 2s linear infinite;
+}
+
+@keyframes data-flow {
+  0% { opacity: 0; transform: translateX(-20px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(20px); }
+}
+
+/* Feature Card Hover Effects */
+.feature-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    var(--glow-neural);
+}
+
+.feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+}
+
+/* Pricing Card Enhancements */
+.pricing-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+  border: 2px solid var(--neural-blue);
+  box-shadow: var(--glow-neural);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+/* AI Badge */
+.ai-badge {
+  background: var(--bg-neural);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: var(--glow-neural);
+  animation: pulse-glow var(--pulse-duration) ease-in-out infinite;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: var(--neural-blue);
+  box-shadow: var(--glow-neural);
+  transform: translateY(-5px);
+}
+
+/* Loading Animation */
+.neural-loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--neural-blue);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--neural-blue), var(--neural-purple));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--cyber-green), var(--neural-blue));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .neural-button, .cyber-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .glass-card {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --data-silver: #F1F5F9;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus states for accessibility */
+.neural-button:focus,
+.cyber-button:focus {
+  outline: 2px solid var(--neural-blue);
+  outline-offset: 2px;
+}
